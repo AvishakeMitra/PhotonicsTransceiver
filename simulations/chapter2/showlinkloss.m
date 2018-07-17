@@ -1,0 +1,19 @@
+clc
+clear all
+close all
+
+data = xlsread('optical link loss.xlsx');
+
+Pin = 10.^((data(:,1)-30)/10);
+P2 = 10.^((data(:,2)-30)/10);
+Pdc = 10.^((data(:,3)-30)/10);
+
+% figure, ...
+%     plot(Pin,P2,'*'), ...
+%     xlabel('P_{in} (W)'), ...
+%     ylabel('P_{2}(0) (W)')
+
+figure, ...
+    plot(Pin,Pdc,'*'), ...
+    xlabel('P_{in} (W)'), ...
+    ylabel('P_{dc} (W)')
